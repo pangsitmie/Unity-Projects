@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "276013424093",
+    "firebase_url": "https://sqlserver-1ccd1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sqlserver-1ccd1",
+    "storage_bucket": "sqlserver-1ccd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276013424093:android:ab8c2ce894da7fa3f52a34",
+        "android_client_info": {
+          "package_name": "com.cloudprogramming.ticketSystemTest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276013424093-btmk5bfmrlmq6kuabe811764tgluc1ks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv29luN9iHzHUPUUtLjR9qvJJu5RR88lg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276013424093-btmk5bfmrlmq6kuabe811764tgluc1ks.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "276013424093-sl24ucnh5s7kj847r2q7r9eko6h44nb9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cloudprogramming.ticketSystemTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

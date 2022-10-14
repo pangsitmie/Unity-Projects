@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314006742872",
+    "project_id": "ticketsystemtest-b1ee9",
+    "storage_bucket": "ticketsystemtest-b1ee9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314006742872:android:e79e996a4adb431775672d",
+        "android_client_info": {
+          "package_name": "com.cloudprogramming.ticketSystemTest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314006742872-lo6i03r8qbcja5iehbdg4f3h4snvlf69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVOV983SI1YFOQiHvOnuFOpXdUXIQHg3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314006742872-lo6i03r8qbcja5iehbdg4f3h4snvlf69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

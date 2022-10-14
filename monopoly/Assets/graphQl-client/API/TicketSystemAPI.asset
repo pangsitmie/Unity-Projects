@@ -1,0 +1,3101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccf793b7ca1cc645b9cd36d753b8e3c, type: 3}
+  m_Name: TicketSystemAPI
+  m_EditorClassIdentifier: 
+  url: https://tickettest.cloudprogrammingonline.com/graphql
+  queries:
+  - name: getAllCommodityCategory
+    type: 0
+    query: "query getAllCommodityCategory{\n    allCommodityCategoryName{\n       
+      id\n        name\n    }\n}"
+    queryString: allCommodityCategoryName
+    returnType: CommodityCategory
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - orderInfo
+    - allOrderInfo
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: name
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: name
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: allRecipientInformation
+    type: 0
+    query: "query allRecipientInformation{\n    allRecipientInfo{\n        id\n       
+      memberId\n        name\n        phone{\n            location\n            number\n       
+      }\n        postalCode\n        countyCity\n        address\n    }\n}"
+    queryString: allRecipientInfo
+    returnType: RecipientInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - orderInfo
+    - allOrderInfo
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: memberId
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: postalCode
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: countyCity
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: address
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: name
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: postalCode
+        type: String
+      - name: countyCity
+        type: String
+      - name: address
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: commodityInformation
+    type: 0
+    query: "query commodityInformation{\n    commodityInfo(  categoryId :-1, startId
+      :0, quantity :20, sort :{ order :\"ASC\", field :\"id\"} ){\n        id\n       
+      price\n        quantity\n        category{\n            id\n            name\n       
+      }\n        name\n        description\n        image\n    }\n}"
+    queryString: commodityInfo
+    returnType: CommodityInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - orderInfo
+    - allOrderInfo
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: price
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: quantity
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: category
+      type: ICommodityCategory
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: name
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: name
+      type: String
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: name
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: description
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: image
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: price
+        type: Int
+      - name: quantity
+        type: Int
+      - name: category
+        type: ICommodityCategory
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: getMemberInfo
+    type: 0
+    query: "query getMemberInfo{\n    memberInfo{\n        id\n        phone{\n           
+      location\n            number\n        }\n        lotteryTicket\n        nickname\n       
+      token\n    }\n}"
+    queryString: memberInfo
+    returnType: MemberInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - orderInfo
+    - allOrderInfo
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: lotteryTicket
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: nickname
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: token
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: allOrderInformation
+    type: 0
+    query: "query allOrderInformation{\n    allOrderInfo{\n        id\n        memberId\n       
+      orderDate\n        commodityTotalPrice\n        phone{\n            location\n           
+      number\n        }\n        address\n        name\n        deliveryFee\n       
+      logisticsName\n        deliveryId\n        deliveryTime\n        details{\n           
+      id\n            orderId\n            commodityInfo{\n                quantity\n               
+      unitPrice\n                name\n                description\n               
+      image\n            }\n        }\n        status{\n            id\n           
+      statement\n        }\n    }\n}"
+    queryString: allOrderInfo
+    returnType: OrderInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - orderInfo
+    - allOrderInfo
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 1
+      name: memberId
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 2
+      name: orderDate
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 3
+      name: commodityTotalPrice
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 4
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 04000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 04000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: address
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 6
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 7
+      name: deliveryFee
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 8
+      name: logisticsName
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 9
+      name: deliveryId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 10
+      name: deliveryTime
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 11
+      name: details
+      type: IOrderDetails
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 0d000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: orderId
+        type: Int
+      - name: commodityInfo
+        type: IOrderCommodityInfo
+      hasChanged: 0
+    - index: 1
+      name: orderId
+      type: Int
+      parentIndexes: 0d000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: orderId
+        type: Int
+      - name: commodityInfo
+        type: IOrderCommodityInfo
+      hasChanged: 0
+    - index: 2
+      name: commodityInfo
+      type: IOrderCommodityInfo
+      parentIndexes: 0d000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: orderId
+        type: Int
+      - name: commodityInfo
+        type: IOrderCommodityInfo
+      hasChanged: 0
+    - index: 0
+      name: quantity
+      type: Int
+      parentIndexes: 0d00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: quantity
+        type: Int
+      - name: unitPrice
+        type: Int
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: unitPrice
+      type: Int
+      parentIndexes: 0d00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: quantity
+        type: Int
+      - name: unitPrice
+        type: Int
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 0d00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: quantity
+        type: Int
+      - name: unitPrice
+        type: Int
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: description
+      type: String
+      parentIndexes: 0d00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: quantity
+        type: Int
+      - name: unitPrice
+        type: Int
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: image
+      type: String
+      parentIndexes: 0d00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: quantity
+        type: Int
+      - name: unitPrice
+        type: Int
+      - name: name
+        type: String
+      - name: description
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 12
+      name: status
+      type: IOrderStatus
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: memberId
+        type: Int
+      - name: orderDate
+        type: String
+      - name: commodityTotalPrice
+        type: Int
+      - name: phone
+        type: IPhoneFormat
+      - name: address
+        type: String
+      - name: name
+        type: String
+      - name: deliveryFee
+        type: Int
+      - name: logisticsName
+        type: String
+      - name: deliveryId
+        type: String
+      - name: deliveryTime
+        type: String
+      - name: details
+        type: IOrderDetails
+      - name: status
+        type: IOrderStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 16000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: statement
+      type: String
+      parentIndexes: 16000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: statement
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: machineTypesInfo
+    type: 0
+    query: "query machineTypesInfo{\n    machineTypesInfo{\n        id\n        name\n   
+      }\n}"
+    queryString: machineTypesInfo
+    returnType: MachineTypesInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - orderInfo
+    - allOrderInfo
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: name
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: name
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: gameResult
+    type: 0
+    query: 
+    queryString: gameResult
+    returnType: GameResultUnion
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - machinePlayRecord
+    - signIn
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - orderInfo
+    - allOrderInfo
+    fields: []
+    isComplete: 0
+  - name: friendList
+    type: 0
+    query: "query friendList{\n    friendList{\n        id\n        nickname\n       
+      image\n    }\n}"
+    queryString: friendList
+    returnType: OtherMemberInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - machinePlayRecord
+    - allMachineStatisticsInfo
+    - checkNicknameAvailable
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - friendList
+    - playerSearch
+    - orderInfo
+    - allMemberOrderInfo
+    - allOrderInfo
+    - fetchPrivateChatRecord
+    fields:
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: image
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: searchPlayers
+    type: 0
+    query: "query searchPlayers{\n    searchPlayers(  input :{ phone :{ number :\"0911111111\",
+      location :\"TW\"}} ){\n        id\n        nickname\n        phone{\n           
+      location\n            number\n        }\n        image\n    }\n}"
+    queryString: searchPlayers
+    returnType: OtherMemberInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - machinePlayRecord
+    - allMachineStatisticsInfo
+    - checkNicknameAvailable
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - friendList
+    - searchPlayers
+    - orderInfo
+    - allMemberOrderInfo
+    - allOrderInfo
+    - fetchPrivateChatRecord
+    fields:
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: image
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: friendInviteList
+    type: 0
+    query: "query friendInviteList{\n    friendInviteList{\n        id\n        nickname\n       
+      phone{\n            location\n            number\n        }\n        image\n   
+      }\n}"
+    queryString: friendInviteList
+    returnType: OtherMemberInfo
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - machinePlayRecord
+    - allMachineStatisticsInfo
+    - checkNicknameAvailable
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - friendList
+    - friendInviteList
+    - searchPlayers
+    - orderInfo
+    - allMemberOrderInfo
+    - allOrderInfo
+    - fetchPrivateChatRecord
+    fields:
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: image
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: fetchLastPrivateMsg
+    type: 0
+    query: "query fetchLastPrivateMsg{\n    fetchLastPrivateMsg{\n        id\n       
+      initiator{\n            id\n            nickname\n            image\n       
+      }\n        target{\n            id\n            nickname\n            image\n       
+      }\n        messageType{\n            id\n            statement\n        }\n       
+      dateTime\n        message\n        pointTransactionInfo{\n            id\n           
+      initiator{\n                id\n        }\n            target{\n               
+      id\n            }\n        }\n    }\n}"
+    queryString: fetchLastPrivateMsg
+    returnType: PrivateChatRecord
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - machinePlayRecord
+    - allMachineStatisticsInfo
+    - checkNicknameAvailable
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - friendList
+    - friendInviteList
+    - searchPlayers
+    - orderInfo
+    - allMemberOrderInfo
+    - allOrderInfo
+    - fetchPrivateChatRecord
+    - fetchLastPrivateMsg
+    fields:
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 1
+      name: initiator
+      type: IOtherMemberInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: image
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: target
+      type: IOtherMemberInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: image
+      type: String
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: messageType
+      type: IMessageType
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 09000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: statement
+      type: String
+      parentIndexes: 09000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: dateTime
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 5
+      name: message
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 6
+      name: pointTransactionInfo
+      type: IPointTransactionInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 0e000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 1
+      name: initiator
+      type: IOtherMemberInfo
+      parentIndexes: 0e000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 0e00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: target
+      type: IOtherMemberInfo
+      parentIndexes: 0e000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 0e00000012000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: fetchPrivateChatRecord
+    type: 0
+    query: "query fetchPrivateChatRecord{\n    fetchPrivateChatRecord(  targetId
+      :9 ){\n        id\n        initiator{\n            id\n            nickname\n           
+      phone{\n                location\n                number\n        }\n           
+      image\n        }\n        target{\n            id\n            nickname\n           
+      phone{\n                location\n                number\n        }\n           
+      image\n        }\n        messageType{\n            id\n            statement\n       
+      }\n        dateTime\n        message\n        pointTransactionInfo{\n           
+      id\n            initiator{\n                id\n        }\n            target{\n               
+      id\n        }\n            pointNum\n            createDateTime\n           
+      expirationDateTime\n            status{\n                id\n               
+      statement\n            }\n        }\n    }\n}"
+    queryString: fetchPrivateChatRecord
+    returnType: PrivateChatRecord
+    queryOptions:
+    - commodityInfo
+    - allCommodityCategoryName
+    - machineInfo
+    - machineTypesInfo
+    - machinePlayRecord
+    - allMachineStatisticsInfo
+    - checkNicknameAvailable
+    - serverSignIn
+    - memberInfo
+    - allRecipientInfo
+    - tokenParser
+    - gameResult
+    - friendList
+    - friendInviteList
+    - searchPlayers
+    - orderInfo
+    - allMemberOrderInfo
+    - allOrderInfo
+    - fetchPrivateChatRecord
+    - fetchLastPrivateMsg
+    fields:
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 1
+      name: initiator
+      type: IOtherMemberInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 0100000004000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 0100000004000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: image
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: target
+      type: IOtherMemberInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 08000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: nickname
+      type: String
+      parentIndexes: 08000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 08000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 080000000b000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 080000000b000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: image
+      type: String
+      parentIndexes: 08000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: messageType
+      type: IMessageType
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 0f000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: statement
+      type: String
+      parentIndexes: 0f000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: dateTime
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 5
+      name: message
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 6
+      name: pointTransactionInfo
+      type: IPointTransactionInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 14000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 1
+      name: initiator
+      type: IOtherMemberInfo
+      parentIndexes: 14000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 1400000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: target
+      type: IOtherMemberInfo
+      parentIndexes: 14000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 1400000018000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: pointNum
+      type: Int
+      parentIndexes: 14000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 4
+      name: createDateTime
+      type: String
+      parentIndexes: 14000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 5
+      name: expirationDateTime
+      type: String
+      parentIndexes: 14000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 6
+      name: status
+      type: IPointTransactionStatus
+      parentIndexes: 14000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: pointNum
+        type: Int
+      - name: createDateTime
+        type: String
+      - name: expirationDateTime
+        type: String
+      - name: status
+        type: IPointTransactionStatus
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 140000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: statement
+      type: String
+      parentIndexes: 140000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  mutations:
+  - name: signUp
+    type: 1
+    query: "mutation signUp{\n    signUp(  input :{ phone :{ number :\"0911111111\",
+      location :\"TW\"}, password :\"23387696\", verificationCode :\"109666\", nickname
+      :\"test1\"} )\n}"
+    queryString: signUp
+    returnType: Boolean
+    queryOptions:
+    - signUp
+    - signIn
+    - testAA
+    fields: []
+    isComplete: 1
+  - name: sendSMS
+    type: 1
+    query: "mutation sendSMS{\n    sendSMS(  input :{ phone :{ number :\"0911111111\",
+      location :\"TW\"}, type :0} )\n}"
+    queryString: sendSMS
+    returnType: Boolean
+    queryOptions:
+    - signUp
+    - sendSMS
+    - testAA
+    fields: []
+    isComplete: 1
+  - name: modifyNickname
+    type: 1
+    query: "mutation modifyNickname{\n    modifyNickname(  nickname :\"test3\" )\n}"
+    queryString: modifyNickname
+    returnType: Boolean
+    queryOptions:
+    - signUp
+    - sendSMS
+    - addRecipientInformation
+    - modifyRecipientInformation
+    - modifyNickname
+    - placeOrder
+    fields: []
+    isComplete: 1
+  - name: placeOrder
+    type: 1
+    query: "mutation placeOrder{\n    placeOrder(  commodity :[{ commodityId :1,
+      quantity :2},{ commodityId :4, quantity :1}], recipientInformation :{ name
+      :\"test3\", phone :{ number :\"0911111113\", location :\"TW\"}, postalCode
+      :\"640\", countyCity :\"\u96F2\u6797\u7E23 \u6597\u516D\u5E02\", address :\"\u5927\u5B78\u8DEF123\u865F\"}
+      )\n}"
+    queryString: placeOrder
+    returnType: Boolean
+    queryOptions:
+    - signUp
+    - sendSMS
+    - addRecipientInformation
+    - modifyRecipientInformation
+    - modifyNickname
+    - placeOrder
+    fields: []
+    isComplete: 1
+  - name: addRecipientInformation
+    type: 1
+    query: 
+    queryString: insertRecipientInfo
+    returnType: Boolean
+    queryOptions:
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - placeOrder
+    fields: []
+    isComplete: 0
+  - name: modifyRecipientInformation
+    type: 1
+    query: 
+    queryString: modifyRecipientInfo
+    returnType: Boolean
+    queryOptions:
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - placeOrder
+    fields: []
+    isComplete: 0
+  - name: signIn
+    type: 1
+    query: "mutation signIn{\n    signIn(  phone :{ number :\"0911111115\", location
+      :\"TW\"}, password :\"23387696\", registrationToken :\"\" ){\n        id\n       
+      phone{\n            location\n            number\n        }\n        lotteryTicket\n       
+      nickname\n        image\n        token\n    }\n}"
+    queryString: signIn
+    returnType: MemberInfo
+    queryOptions:
+    - insertNewCommodity
+    - modifyCommodityInfo
+    - deleteCommodity
+    - insertNewCommodityCategory
+    - modifyCommodityCategory
+    - deleteCommodityCategory
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - signIn
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - addFriend
+    - removeFriend
+    - uploadRegistrationToken
+    - placeOrder
+    - modifyOrderInfo
+    - sendPrivateMsg
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: phone
+      type: IPhoneFormat
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: location
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: number
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: number
+        type: String
+      - name: location
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: lotteryTicket
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: nickname
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: image
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: token
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: phone
+        type: IPhoneFormat
+      - name: lotteryTicket
+        type: Int
+      - name: nickname
+        type: String
+      - name: image
+        type: String
+      - name: token
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: removeFriend
+    type: 1
+    query: 
+    queryString: removeFriend
+    returnType: Boolean
+    queryOptions:
+    - insertNewCommodity
+    - modifyCommodityInfo
+    - deleteCommodity
+    - insertNewCommodityCategory
+    - modifyCommodityCategory
+    - deleteCommodityCategory
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - signIn
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - addFriend
+    - removeFriend
+    - uploadRegistrationToken
+    - placeOrder
+    - modifyOrderInfo
+    - sendPrivateMsg
+    fields: []
+    isComplete: 0
+  - name: sendFriendRequest
+    type: 1
+    query: 
+    queryString: sendFriendRequest
+    returnType: Boolean
+    queryOptions:
+    - insertNewCommodity
+    - modifyCommodityInfo
+    - deleteCommodity
+    - insertNewCommodityCategory
+    - modifyCommodityCategory
+    - deleteCommodityCategory
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - signIn
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - sendFriendRequest
+    - acceptFriendRequest
+    - removeFriendRequest
+    - removeFriend
+    - updateRegistrationToken
+    - placeOrder
+    - modifyOrderInfo
+    - sendPrivateMsg
+    fields: []
+    isComplete: 0
+  - name: acceptFriendRequest
+    type: 1
+    query: "mutation acceptFriendRequest{\n    acceptFriendRequest(  initiatorId
+      :6 )\n}"
+    queryString: acceptFriendRequest
+    returnType: Boolean
+    queryOptions:
+    - insertNewCommodity
+    - modifyCommodityInfo
+    - deleteCommodity
+    - insertNewCommodityCategory
+    - modifyCommodityCategory
+    - deleteCommodityCategory
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - signIn
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - sendFriendRequest
+    - acceptFriendRequest
+    - removeFriendRequest
+    - removeFriend
+    - updateRegistrationToken
+    - placeOrder
+    - modifyOrderInfo
+    - sendPrivateMsg
+    fields: []
+    isComplete: 1
+  - name: removeFriendRequest
+    type: 1
+    query: 
+    queryString: removeFriendRequest
+    returnType: Boolean
+    queryOptions:
+    - insertNewCommodity
+    - modifyCommodityInfo
+    - deleteCommodity
+    - insertNewCommodityCategory
+    - modifyCommodityCategory
+    - deleteCommodityCategory
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - signIn
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - sendFriendRequest
+    - acceptFriendRequest
+    - removeFriendRequest
+    - removeFriend
+    - updateRegistrationToken
+    - placeOrder
+    - modifyOrderInfo
+    - sendPrivateMsg
+    fields: []
+    isComplete: 0
+  - name: updateRegistrationToken
+    type: 1
+    query: 
+    queryString: updateRegistrationToken
+    returnType: String
+    queryOptions: []
+    fields: []
+    isComplete: 0
+  - name: sendPrivateMsg
+    type: 1
+    query: "mutation sendPrivateMsg{\n    sendPrivateMsg{\n        id\n        initiator{\n           
+      id\n        }\n        target{\n            id\n        }\n        messageType{\n           
+      id\n            statement\n        }\n        dateTime\n        message\n   
+      }\n}"
+    queryString: sendPrivateMsg
+    returnType: PrivateChatRecord
+    queryOptions:
+    - insertNewCommodity
+    - modifyCommodityInfo
+    - deleteCommodity
+    - insertNewCommodityCategory
+    - modifyCommodityCategory
+    - deleteCommodityCategory
+    - uploadGameResult
+    - updateMachine
+    - insertMachine
+    - deleteMachine
+    - signUp
+    - signIn
+    - sendSMS
+    - modifyNickname
+    - insertRecipientInfo
+    - modifyRecipientInfo
+    - sendFriendRequest
+    - acceptFriendRequest
+    - removeFriendRequest
+    - removeFriend
+    - updateRegistrationToken
+    - placeOrder
+    - modifyOrderInfo
+    - sendPrivateMsg
+    - sendPointTransactionMessage
+    fields:
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 1
+      name: initiator
+      type: IOtherMemberInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: target
+      type: IOtherMemberInfo
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 03000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: nickname
+        type: String
+      - name: phone
+        type: IPhoneFormat
+      - name: image
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: messageType
+      type: IMessageType
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: Int
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: statement
+      type: String
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: statement
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: dateTime
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    - index: 5
+      name: message
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: Int
+      - name: initiator
+        type: IOtherMemberInfo
+      - name: target
+        type: IOtherMemberInfo
+      - name: messageType
+        type: IMessageType
+      - name: dateTime
+        type: String
+      - name: message
+        type: String
+      - name: pointTransactionInfo
+        type: IPointTransactionInfo
+      hasChanged: 0
+    isComplete: 1
+  subscriptions: []
+  loading: 0
